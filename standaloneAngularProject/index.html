@@ -1,0 +1,90 @@
+<!Doctype html>
+<html ng-app="standaloneAngular">
+    <head>
+        <title>Angular Application</title>
+        <!-- Including required JS files -->
+        <script src="static/JS/jquery.min.js"></script>
+        <script src="static/JS/angular.min.js"></script>
+        <script src="static/JS/bootstrap.min.js"></script>
+        <script src="controller/appController.js"></script>
+
+        <!-- Including Css files-->
+        <link rel="stylesheet" href="static/CSS/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container" ng-controller="firstController">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Required details for Registration</h2>
+                    <ul>
+                        <li ng-repeat="list in ::requiredDetails">{{list}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form-horizontal">
+                <form ng-submit="submitForm()" name="registrationForm">
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label>First Name</label>
+                            <input ng-model="firstName"
+                                   type="text"
+                                   class="form-control"
+                                   name="firstName"
+                                   placeholder="First Name"
+                                   required
+                                   aria-label="First Name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label>Last Name</label>
+                            <input ng-model="lastName"
+                                   type="text"
+                                   class="form-control"
+                                   name="lastName"
+                                   placeholder="Last Name"
+                                   required
+                                   aria-label="Last Name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label>Email Address</label>
+                            <input ng-model="emailAddress"
+                                   type="email"
+                                   class="form-control"
+                                   name="emailAddress"
+                                   placeholder="Email Address"
+                                   required
+                                   aria-label="Email Address">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label>Mobile</label>
+                            <input ng-model="mobile"
+                                   type="tel"
+                                   class="form-control"
+                                   name="mobile"
+                                   placeholder="Mobile"
+                                   aria-label="Mobile">
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <button type="submit"
+                                    class="btn btn-success">
+                                Save
+                            </button>
+                            <button type="reset"
+                                    class="btn btn-danger">
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
