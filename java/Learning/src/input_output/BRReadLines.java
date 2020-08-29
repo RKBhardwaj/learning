@@ -3,15 +3,17 @@ package input_output;
 import java.io.*;
 
 //Use a BufferedReader to read characters from the console.
-public class BRRead {
+public class BRReadLines {
 	public static void main(String args[]) throws IOException {
-		char c;
+		String str;
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.println("Enter characters, 'q' to quit.");
+		
+		System.out.println("Enter lines of text.");
+		System.out.println("Enter 'stop' to quit.");
 		
 		do {
-			c = (char) br.read();
-			System.out.println(c);
-		} while (c != 'q');
+			str = br.readLine();
+			System.out.println(str);
+		} while (!str.equalsIgnoreCase("stop"));
 	}
 }
